@@ -17,6 +17,12 @@ export class RegisterComponent implements OnInit {
 
   save(){
     this.registerService.addUser( this.registerModel );
+    console.log( "this.registerService._loginData", this.registerService._loginData );
+
+    //setter
+    console.log( "this.test", this.registerService._test );
+    this.registerService._test = "testtt";
+    console.log( "this.test", this.registerService._test );
   }
 
 }

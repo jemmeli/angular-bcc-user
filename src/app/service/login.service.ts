@@ -13,6 +13,8 @@ export class LoginService {
     {email: "user1", pwd: "user1", role:"USER"}
   ];
 
+  private test = "test";
+
   loginIn( data: any ): boolean{
 
     for( let item of this.loginData ){
@@ -26,7 +28,21 @@ export class LoginService {
 
   addUser( data : any ){
     this.loginData.push(data);
-    console.log( this.loginData );
+    //console.log( this.loginData );
+  }
+
+  //loginData est private on doit utliser "getter" pour le rond visible
+  //dans register.component.ts
+  get _loginData(){
+    return this.loginData;
+  }
+
+  get _test(){
+    return this.test;
+  }
+  //setter
+  set _test(value:any){
+    this.test = value;
   }
 
 }
