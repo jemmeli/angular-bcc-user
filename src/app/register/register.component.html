@@ -7,23 +7,23 @@
       <form action="#">
         <div class="form-group mb-3">
           <label for="email" class="mb-2">Email adress:</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+          <input type="email" class="form-control" id="email" name="email"  [(ngModel)]="registerModel.email" placeholder="Enter email">
         </div>
         <div class="form-group mb-3">
           <label for="pwd" class="mb-2">Password:</label>
-          <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+          <input type="password" class="form-control" id="pwd" name="admin1" [(ngModel)]="registerModel.pwd" placeholder="Enter password">
         </div>
 
         <div class="form-group mb-3">
           <label for="role">Role:</label>
-          <select class="form-control" id="role">
+          <select class="form-control" id="role" name="role" [(ngModel)]="registerModel.role">
             <option value="1">USER</option>
             <option value="2">ADMIN</option>
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary btnStyle">Save</button>
-        <button type="submit" [routerLink]="['/login']" class="btn btn-success btnStyle">Login</button>
+        <button type="submit" class="btn btn-primary btnStyle" (click)="save()">Save</button>
+        <button type="submit" [routerLink]="['/']" class="btn btn-success btnStyle">Login</button>
         <button type="submit" class="btn btn-danger btnStyle">Cancel</button>
       </form>
     </div>

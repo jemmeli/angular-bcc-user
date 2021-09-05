@@ -13,7 +13,7 @@
           <label for="pwd" class="mb-2">Password:</label>
           <input type="password" class="form-control" id="pwd" name="password"  [(ngModel)]="loginModel.password" placeholder="Enter password">
         </div>
-        <a href="#" (click)="checkUser()" class="btn btn-primary btnStyle">Login</a>
+        <a href="#" (click)="login()" class="btn btn-primary btnStyle">Login</a>
         <a href="#" [routerLink]="['/register']" class="btn btn-danger btnStyle">Register</a>
       </form>
     </div>
