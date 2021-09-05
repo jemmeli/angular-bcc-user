@@ -6,15 +6,15 @@
     <div class="card-body">
       <form action="#">
         <div class="form-group mb-3">
-          <label for="email" class="mb-2">Email adress:</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+          <label for="email" class="mb-2">Name:</label>
+          <input type="text" class="form-control" id="email" name="email" [(ngModel)]="loginModel.email" placeholder="Enter name">
         </div>
         <div class="form-group mb-3">
           <label for="pwd" class="mb-2">Password:</label>
-          <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+          <input type="password" class="form-control" id="pwd" name="password"  [(ngModel)]="loginModel.password" placeholder="Enter password">
         </div>
-        <button type="submit" class="btn btn-primary btnStyle">Login</button>
-        <button type="submit" class="btn btn-danger btnStyle">Register</button>
+        <a href="#" (click)="checkUser()" class="btn btn-primary btnStyle">Login</a>
+        <a href="#" [routerLink]="['/register']" class="btn btn-danger btnStyle">Register</a>
       </form>
     </div>
   </div>
