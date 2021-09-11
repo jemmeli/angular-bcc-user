@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { LoginService } from '../service/login.service';
 export class LoginComponent implements OnInit {
 
   loginModel = {email:'', password:''};
+  logInDash = false;
 
-  constructor( private loginService:LoginService )
+  constructor( private loginService:LoginService, private _route:Router )
   {
 
   }
@@ -21,6 +23,13 @@ export class LoginComponent implements OnInit {
   login(){
 
     console.log( "from service --> ", this.loginService.loginIn( this.loginModel ) );
+    if( this.loginService.loginIn( this.loginModel ) ){
+      this._route.navigateByUrl("dash");
+      this.logInDash =  false;
+
+    }else{
+      this.logInDash =  true;
+    }
 
   }
 

@@ -4,6 +4,11 @@
       <h3>Authentification</h3>
     </div>
     <div class="card-body">
+
+      <div class="alert alert-danger" *ngIf="logInDash">
+        <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+      </div>
+
       <form action="#">
         <div class="form-group mb-3">
           <label for="email" class="mb-2">Name:</label>
@@ -13,8 +18,8 @@
           <label for="pwd" class="mb-2">Password:</label>
           <input type="password" class="form-control" id="pwd" name="password"  [(ngModel)]="loginModel.password" placeholder="Enter password">
         </div>
-        <a href="#" (click)="login()" class="btn btn-primary btnStyle">Login</a>
-        <a href="#" [routerLink]="['/register']" class="btn btn-danger btnStyle">Register</a>
+        <button (click)="login()" class="btn btn-primary btnStyle">Login</button>
+        <button [routerLink]="['/register']" class="btn btn-danger btnStyle">Register</button>
       </form>
     </div>
   </div>
