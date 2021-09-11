@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Prenom</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of userData">
+      <td>{{ item.prenom }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.role }}</td>
+      <td>
+        <a href="#" class="btn btn-link">Modifier</a>
+        <a href="#" class="btn btn-link">Détail</a>
+        <a href="#" class="btn btn-link">Supprimer</a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

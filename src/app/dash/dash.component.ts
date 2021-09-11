@@ -8,12 +8,10 @@ import { LoginService } from '../service/login.service';
 })
 export class DashComponent implements OnInit {
 
-  userData:any;
 
-  constructor( private userService:LoginService ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.userData = this.userService._loginData;
   }
 
 }
