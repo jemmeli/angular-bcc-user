@@ -1,17 +1,19 @@
 <!--Modal-->
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+    <h4 class="modal-title" id="modal-basic-title">Detail Utilisateur</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <p>Hello, World!</p>
+    <strong>Prenom:</strong> {{ user.prenom }} <br><br>
+    <strong>Email:</strong> {{ user.email }} <br><br>
+    <strong>Role:</strong> {{ user.role }} <br><br>
   </div>
-  <div class="modal-footer">
+  <!-- <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
-  </div>
+  </div> -->
 </ng-template>
 
 <!--table-->
@@ -31,7 +33,7 @@
       <td>{{ item.role }}</td>
       <td>
         <a class="btn btn-link" >Modifier</a>
-        <a class="btn btn-link" (click)="open(content)">Détail</a>
+        <a class="btn btn-link" (click)="open(content ,item)">Détail</a>
         <a class="btn btn-link">Supprimer</a>
       </td>
     </tr>

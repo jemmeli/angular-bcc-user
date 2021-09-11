@@ -12,6 +12,8 @@ export class UserComponent implements OnInit {
 
   userData:any;
 
+  user = {prenom: "", email: "", pwd: "", role:""}
+
   constructor( private userService:LoginService, config: NgbModalConfig, private modalService: NgbModal ) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
@@ -22,8 +24,12 @@ export class UserComponent implements OnInit {
     this.userData = this.userService._loginData;
   }
 
-  open(content:any) {
+  open(content:any, user : any) {
     this.modalService.open(content);
+    //console.log(user);
+    this.user.prenom = user.prenom;
+    this.user.email = user.email;
+    this.user.role = user.role;
   }
 
 }
