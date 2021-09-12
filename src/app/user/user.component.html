@@ -26,8 +26,51 @@
     <p>Voulez vous vraiment supprimer cette utilisateur</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="delteUser()">Supprimer</button>
+    <button type="button" class="btn btn-danger" (click)="removeUser()">Supprimer</button>
     <button type="button" class="btn btn-primary" (click)="c('Save click')">Cancel</button>
+  </div>
+</ng-template>
+
+
+<!--Modal delete detail-->
+<ng-template #modifUser let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Supprimer l'utilisateur</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form action="#">
+      <div class="form-group mb-3">
+        <label for="prenom" class="mb-2">Prenom:</label>
+        <input type="text" class="form-control" id="prenom" name="prenom"  [(ngModel)]="userDetail.prenom" placeholder="Enter email">
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="mb-2">Email adress:</label>
+        <input type="email" class="form-control" id="email" name="email"  [(ngModel)]="userDetail.email" placeholder="Enter email">
+      </div>
+      <div class="form-group mb-3">
+        <label for="pwd" class="mb-2">Password:</label>
+        <input type="password" class="form-control" id="pwd" name="admin1" [(ngModel)]="userDetail.pwd" placeholder="Enter password">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="role">Role:</label>
+        <select class="form-control" id="role" name="role" [(ngModel)]="userDetail.role">
+          <option value="ADMIN">USER</option>
+          <option value="USER">ADMIN</option>
+        </select>
+      </div>
+
+    </form>
+    {{ userDetail | json }}
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="updateUser();c('Save click');">Enregister</button>
+  <button type="button" class="btn btn-primary" (click)="c('Save click')">Annuler</button>
   </div>
 </ng-template>
 
@@ -47,7 +90,7 @@
       <td>{{ item.email }}</td>
       <td>{{ item.role }}</td>
       <td>
-        <a class="btn btn-link" >Modifier</a>
+        <a class="btn btn-link" (click)="open(modifUser ,item)" >Modifier</a>
         <a class="btn btn-link" (click)="open(content ,item)">Détail</a>
         <a class="btn btn-link" (click)="open(delete ,item)">Supprimer</a>
       </td>

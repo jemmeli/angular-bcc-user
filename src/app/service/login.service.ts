@@ -31,6 +31,25 @@ export class LoginService {
     //console.log( this.loginData );
   }
 
+  removeUser( user : any ){
+    //forIn retourne indice
+    //forOf retourne objet
+    for(let item in this.loginData){
+      if( user.id == this.loginData[item].id ){
+        this.loginData.splice(Number(item), 1);
+      }
+    }
+  }
+
+  editUser( user : any ){
+    console.log(user);
+    for(let item in this.loginData){
+      if( user.id == this.loginData[item].id ){
+        this.loginData[item] = user;
+      }
+    }
+  }
+
   //loginData est private on doit utliser "getter" pour le rond visible
   //dans register.component.ts
   get _loginData(){
