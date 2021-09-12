@@ -12,7 +12,7 @@ export class UserComponent implements OnInit {
 
   userData:any;
 
-  user = {prenom: "", email: "", pwd: "", role:""}
+  userDetail = {prenom: "", email: "", pwd: "", role:""}
 
   constructor( private userService:LoginService, config: NgbModalConfig, private modalService: NgbModal ) {
     // customize default values of modals used by this component tree
@@ -27,9 +27,9 @@ export class UserComponent implements OnInit {
   open(content:any, user : any) {
     this.modalService.open(content);
     //console.log(user);
-    this.user.prenom = user.prenom;
-    this.user.email = user.email;
-    this.user.role = user.role;
+    this.userDetail.prenom = user.prenom;
+    this.userDetail.email = user.email;
+    this.userDetail.role = user.role;
   }
 
 }
