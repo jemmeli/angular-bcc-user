@@ -8,9 +8,9 @@ export class LoginService {
   constructor() {  }
 
   private loginData = [
-    { prenom: "najm", email: "admin", pwd: "admin", role:"ADMIN"},
-    { prenom: "islem", email: "user", pwd: "user", role:"USER"},
-    { prenom: "Akram", email: "user1", pwd: "user1", role:"USER"}
+    { id: 1, prenom: "najm", email: "admin", pwd: "admin", role:"ADMIN"},
+    { id: 2, prenom: "islem", email: "user", pwd: "user", role:"USER"},
+    { id: 3, prenom: "Akram", email: "user1", pwd: "user1", role:"USER"}
   ];
 
   private test = "test";
